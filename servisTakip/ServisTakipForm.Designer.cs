@@ -543,10 +543,10 @@
             this.gcMalzeme.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.gcMalzeme.Location = new System.Drawing.Point(910, 30);
+            this.gcMalzeme.Location = new System.Drawing.Point(910, 100);
             this.gcMalzeme.MainView = this.gridView2;
             this.gcMalzeme.Name = "gcMalzeme";
-            this.gcMalzeme.Size = new System.Drawing.Size(299, 588);
+            this.gcMalzeme.Size = new System.Drawing.Size(299, 518);
             this.gcMalzeme.TabIndex = 104;
             this.gcMalzeme.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});

@@ -36,8 +36,8 @@ namespace ServisTakip
                 try
                 {
                     //Firma kayıt için ilgili tabloya insert komutu yollanıyor......
-                    MySqlCommand Command = new MySqlCommand("INSERT INTO yedekmalzeme(siparisverenfirma, sehir, malzeme1, malzeme1fiyat, malzeme2, malzeme2fiyat, malzeme3, malzeme3fiyat, malzeme4, malzeme4fiyat, malzeme5, malzeme5fiyat, toplamfiyat, tarih, kargo) VALUES(" +
-                    "?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?)", dbc.Baglanti());
+                    MySqlCommand Command = new MySqlCommand("INSERT INTO yedekmalzeme(siparisverenfirma, sehir, malzeme1, malzeme1fiyat, malzeme2, malzeme2fiyat, malzeme3, malzeme3fiyat, malzeme4, malzeme4fiyat, malzeme5, malzeme5fiyat, toplamfiyat, tarih, kargo, iskonto) VALUES(" +
+                    "?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", dbc.Baglanti());
                     Command.Parameters.AddWithValue("@P1", tbFirmaAdi.Text.ToUpper());
                     Command.Parameters.AddWithValue("@P2", tbSehir.Text.ToUpper());
                     Command.Parameters.AddWithValue("@P3", tbMalzeme1.Text.ToUpper());
@@ -50,12 +50,53 @@ namespace ServisTakip
                     Command.Parameters.AddWithValue("@P10", Convert.ToDouble(tbMalzeme4Fiyat.Text));
                     Command.Parameters.AddWithValue("@P11", tbMalzeme5.Text.ToUpper());
                     Command.Parameters.AddWithValue("@P12", Convert.ToDouble(tbMalzeme5Fiyat.Text));
-                    Command.Parameters.AddWithValue("@P13", Convert.ToDouble(tbToplamFiyat.Text));
+                    
+                    if(rbIskontoYirmi.Checked == true)
+                    {
+                        Command.Parameters.AddWithValue("@P13", fiyattopla() - ((fiyattopla() / 100 ) * 20));
+                    }
+                    else if (rbIskontoYok.Checked == true)
+                    {
+                        Command.Parameters.AddWithValue("@P13", fiyattopla());
+                    }
+
+                    else if (rbIskontoOn.Checked == true)
+                    {
+                        Command.Parameters.AddWithValue("@P13", fiyattopla() - ((fiyattopla() / 100) * 10));
+                    }
+                    else if (rbIskontoOtuz.Checked == true)
+                    {
+                        Command.Parameters.AddWithValue("@P13", fiyattopla() - ((fiyattopla() / 100) * 30));
+                    }
+
                     Command.Parameters.AddWithValue("@P14", tepDate);
+                    
+                    //kargo bilgisi 
                     if (cbKargo.Checked == true)
                         Command.Parameters.AddWithValue("@P15", true);
                     else
                         Command.Parameters.AddWithValue("@P15", false);
+
+
+                    // iskonto kısmı seçili olan değere göre gridview e yazılıyor
+                    if (rbIskontoYirmi.Checked == true)
+                    {
+                        Command.Parameters.AddWithValue("@P16", 20);
+                    }
+                    else if (rbIskontoYok.Checked == true)
+                    {
+                        Command.Parameters.AddWithValue("@P16", 0);
+                    }
+
+                    else if (rbIskontoOn.Checked == true)
+                    {
+                        Command.Parameters.AddWithValue("@P16",  10);
+                    }
+                    else if (rbIskontoOtuz.Checked == true)
+                    {
+                        Command.Parameters.AddWithValue("@P16", 30);
+                            
+                    }
 
                     Command.ExecuteNonQuery();
                     MessageBox.Show("Kayıt Eklendi!!!");
@@ -74,10 +115,18 @@ namespace ServisTakip
             }
         }
 
+        public double fiyattopla() // iskonto hesabını yapmak için kullanılan fonksiyon
+        {
+            double toplamfiyat = Convert.ToDouble(tbMalzeme1Fiyat.Text) + Convert.ToDouble(tbMalzeme2Fiyat.Text) +
+                Convert.ToDouble(tbMalzeme3Fiyat.Text) + Convert.ToDouble(tbMalzeme4Fiyat.Text) + Convert.ToDouble(tbMalzeme5Fiyat.Text);
+            return toplamfiyat;
+        }
+
         private void CikisYapilacak_Load(object sender, EventArgs e)
         {
              DateTime dt = DateTime.Today;
              trh = dt.Date.ToString("yyyy/MM/dd");
+             rbIskontoYirmi.Checked = true;
              DateChange();
         }
 
@@ -104,7 +153,10 @@ namespace ServisTakip
             dataGridViewMalzemeListesi.Columns[12].Caption = "FİYAT";
             dataGridViewMalzemeListesi.Columns[13].Caption = "TOPLAM";
             dataGridViewMalzemeListesi.Columns[14].Caption = "TARİH";
-            dataGridViewMalzemeListesi.Columns[15].Caption = "KARGO";
+            dataGridViewMalzemeListesi.Columns[15].Caption = "İSKONTO";
+            dataGridViewMalzemeListesi.Columns[16].Caption = "KARGO";
+
+
 
             dataGridViewMalzemeListesi.Columns[3].AppearanceCell.BackColor = Color.LightCyan;
             dataGridViewMalzemeListesi.Columns[4].AppearanceCell.BackColor = Color.LightCyan;

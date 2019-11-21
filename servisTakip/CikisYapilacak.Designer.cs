@@ -377,7 +377,7 @@
             // 
             this.button9.Image = global::ServisTakip.Properties.Resources.siparis;
             this.button9.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button9.Location = new System.Drawing.Point(433, 631);
+            this.button9.Location = new System.Drawing.Point(433, 564);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(181, 36);
             this.button9.TabIndex = 28;
@@ -387,7 +387,7 @@
             // rbIskontoOn
             // 
             this.rbIskontoOn.AutoSize = true;
-            this.rbIskontoOn.Location = new System.Drawing.Point(701, 639);
+            this.rbIskontoOn.Location = new System.Drawing.Point(701, 572);
             this.rbIskontoOn.Name = "rbIskontoOn";
             this.rbIskontoOn.Size = new System.Drawing.Size(57, 21);
             this.rbIskontoOn.TabIndex = 29;
@@ -398,7 +398,7 @@
             // rbIskontoYirmi
             // 
             this.rbIskontoYirmi.AutoSize = true;
-            this.rbIskontoYirmi.Location = new System.Drawing.Point(764, 639);
+            this.rbIskontoYirmi.Location = new System.Drawing.Point(764, 572);
             this.rbIskontoYirmi.Name = "rbIskontoYirmi";
             this.rbIskontoYirmi.Size = new System.Drawing.Size(57, 21);
             this.rbIskontoYirmi.TabIndex = 30;
@@ -409,7 +409,7 @@
             // rbIskontoOtuz
             // 
             this.rbIskontoOtuz.AutoSize = true;
-            this.rbIskontoOtuz.Location = new System.Drawing.Point(827, 639);
+            this.rbIskontoOtuz.Location = new System.Drawing.Point(827, 572);
             this.rbIskontoOtuz.Name = "rbIskontoOtuz";
             this.rbIskontoOtuz.Size = new System.Drawing.Size(57, 21);
             this.rbIskontoOtuz.TabIndex = 31;
@@ -420,7 +420,7 @@
             // rbIskontoYok
             // 
             this.rbIskontoYok.AutoSize = true;
-            this.rbIskontoYok.Location = new System.Drawing.Point(637, 639);
+            this.rbIskontoYok.Location = new System.Drawing.Point(637, 572);
             this.rbIskontoYok.Name = "rbIskontoYok";
             this.rbIskontoYok.Size = new System.Drawing.Size(58, 21);
             this.rbIskontoYok.TabIndex = 32;
