@@ -52,6 +52,10 @@ namespace ServisTakip
                     Command.Parameters.AddWithValue("@P10", tbYapilanIslem.Text.ToUpper());
                     Command.Parameters.AddWithValue("@P11", cbTeknisyen.Text.ToUpper());
                     Command.Parameters.AddWithValue("@P12", tbMail.Text.ToUpper());
+                    if(tbSure.Text =="")
+                    {
+                        tbSure.Text = "0";
+                    }
                     Command.Parameters.AddWithValue("@P13", tbSure.Text);
                     Command.Parameters.AddWithValue("@P14", tbFormNo.Text.ToUpper());
                     Command.ExecuteNonQuery();
@@ -74,6 +78,10 @@ namespace ServisTakip
                     Command.Parameters.AddWithValue("@P10", tbYapilanIslem.Text.ToUpper());
                     Command.Parameters.AddWithValue("@P11", cbTeknisyen.Text.ToUpper());
                     Command.Parameters.AddWithValue("@P12", tbMail.Text.ToUpper());
+                    if (tbSure.Text == "")
+                    {
+                        tbSure.Text = "0";
+                    }
                     Command.Parameters.AddWithValue("@P13", tbSure.Text);
                     Command.Parameters.AddWithValue("@P14", tbFormNo.Text.ToUpper());
                     Command.ExecuteNonQuery();
