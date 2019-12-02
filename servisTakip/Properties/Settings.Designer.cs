@@ -406,5 +406,17 @@ namespace ServisTakip.Properties {
                 this["DbKullaniciSifre"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string ArizaSebebi {
+            get {
+                return ((string)(this["ArizaSebebi"]));
+            }
+            set {
+                this["ArizaSebebi"] = value;
+            }
+        }
     }
 }

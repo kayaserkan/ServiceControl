@@ -57,3 +57,4 @@ C:\Users\kayas\OneDrive\Belgeler\Visual Studio 2013\Projects\ServisTakip\ServisT
 C:\Users\kayas\OneDrive\Belgeler\Visual Studio 2013\Projects\ServisTakip\ServisTakip\obj\Debug\ServisTakip.exe.manifest
 C:\Users\kayas\OneDrive\Belgeler\Visual Studio 2013\Projects\ServisTakip\ServisTakip\obj\Debug\ServisTakip.application
 C:\Users\kayas\OneDrive\Belgeler\Visual Studio 2013\Projects\ServisTakip\ServisTakip\obj\Debug\ServisTakip.MalzemeForm.resources
+C:\Users\kayas\OneDrive\Belgeler\Visual Studio 2013\Projects\ServisTakip\ServisTakip\obj\Debug\ServisTakip.SebepForm.resources

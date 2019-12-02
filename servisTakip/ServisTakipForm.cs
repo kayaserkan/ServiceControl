@@ -39,8 +39,12 @@ namespace ServisTakip
 
                 if (tbCikisTarihi.Text == "")
                 {
+                    SebepForm sf = new SebepForm();
+                    sf.ShowDialog();
+                    string sebep = Properties.Settings.Default.ArizaSebebi;
+
                     MySqlCommand Command = new MySqlCommand("UPDATE kayittablo SET FirmaAdi = @P1, Model = @P2, ModelDetay = @P3, Sikayet = @P4, Aksesuar = @P5," +
-                    "Telefon = @P6, Ucret = @P8, GarantiDurumu = @P9, YapilanIslem = @P10, Teknisyen = @P11, MailAdresi = @P12, tamirsuresi = @P13 WHERE FormNo = @P14", dbc.Baglanti());
+                    "Telefon = @P6, Ucret = @P8, GarantiDurumu = @P9, YapilanIslem = @P10, Teknisyen = @P11, MailAdresi = @P12, tamirsuresi = @P13, hata = @P14 WHERE FormNo = @P15", dbc.Baglanti());
                     Command.Parameters.AddWithValue("@P1", cmbFirmaAdi.Text.ToUpper());
                     Command.Parameters.AddWithValue("@P2", cmbModel.Text.ToUpper());
                     Command.Parameters.AddWithValue("@P3", tbModelDetay.Text.ToUpper());
@@ -57,15 +61,23 @@ namespace ServisTakip
                         tbSure.Text = "0";
                     }
                     Command.Parameters.AddWithValue("@P13", tbSure.Text);
-                    Command.Parameters.AddWithValue("@P14", tbFormNo.Text.ToUpper());
+                    Command.Parameters.AddWithValue("@P14", sebep);
+                    Command.Parameters.AddWithValue("@P15", tbFormNo.Text.ToUpper());
                     Command.ExecuteNonQuery();
                     dbc.Baglanti().Close();
                     MessageBox.Show("Kayıt Güncellendi!!!");
+
+                    Properties.Settings.Default.ArizaSebebi = "";
+                    Properties.Settings.Default.Save();
                 }
                 else
                 {
+                    SebepForm sf = new SebepForm();
+                    sf.ShowDialog();
+                    string sebep = Properties.Settings.Default.ArizaSebebi;
+
                     MySqlCommand Command = new MySqlCommand("UPDATE kayittablo SET FirmaAdi = @P1, Model = @P2, ModelDetay = @P3, Sikayet = @P4, Aksesuar = @P5," +
-                    "Telefon = @P6, CikisTarih = @P7, Ucret = @P8, GarantiDurumu = @P9, YapilanIslem = @P10, Teknisyen = @P11, MailAdresi = @P12, tamirsuresi = @P13 WHERE FormNo = @P14", dbc.Baglanti());
+                    "Telefon = @P6, CikisTarih = @P7, Ucret = @P8, GarantiDurumu = @P9, YapilanIslem = @P10, Teknisyen = @P11, MailAdresi = @P12, tamirsuresi = @P13, hata = @P14 WHERE FormNo = @P15", dbc.Baglanti());
                     Command.Parameters.AddWithValue("@P1", cmbFirmaAdi.Text.ToUpper());
                     Command.Parameters.AddWithValue("@P2", cmbModel.Text.ToUpper());
                     Command.Parameters.AddWithValue("@P3", tbModelDetay.Text.ToUpper());
@@ -83,10 +95,13 @@ namespace ServisTakip
                         tbSure.Text = "0";
                     }
                     Command.Parameters.AddWithValue("@P13", tbSure.Text);
-                    Command.Parameters.AddWithValue("@P14", tbFormNo.Text.ToUpper());
+                    Command.Parameters.AddWithValue("@P14", sebep);
+                    Command.Parameters.AddWithValue("@P15", tbFormNo.Text.ToUpper());
                     Command.ExecuteNonQuery();
                     dbc.Baglanti().Close();
                     MessageBox.Show("Kayıt Güncellendi!!!");
+                    Properties.Settings.Default.ArizaSebebi = "";
+                    Properties.Settings.Default.Save();
                 }
             }
             catch (Exception ec)
@@ -372,6 +387,7 @@ namespace ServisTakip
             
 
             MySqlCommand ModelSecCommand = new MySqlCommand("SELECT *FROM modeltablo", dbc.Baglanti());
+            
             MySqlDataReader ModelSecReader = ModelSecCommand.ExecuteReader();
 
             while (ModelSecReader.Read())

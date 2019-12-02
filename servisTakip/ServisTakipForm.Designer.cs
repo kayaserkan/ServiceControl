@@ -98,7 +98,7 @@
             this.tbGelisTarihi.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.tbGelisTarihi.Properties.Appearance.Options.UseFont = true;
             this.tbGelisTarihi.Size = new System.Drawing.Size(247, 34);
-            this.tbGelisTarihi.TabIndex = 12;
+            this.tbGelisTarihi.TabIndex = 14;
             // 
             // simpleButton7
             // 
@@ -184,7 +184,7 @@
             this.tbGetiren.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.tbGetiren.Name = "tbGetiren";
             this.tbGetiren.Size = new System.Drawing.Size(247, 34);
-            this.tbGetiren.TabIndex = 11;
+            this.tbGetiren.TabIndex = 13;
             // 
             // tbAksesuar
             // 
@@ -193,7 +193,7 @@
             this.tbAksesuar.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.tbAksesuar.Name = "tbAksesuar";
             this.tbAksesuar.Size = new System.Drawing.Size(247, 34);
-            this.tbAksesuar.TabIndex = 10;
+            this.tbAksesuar.TabIndex = 12;
             // 
             // tbModelDetay
             // 
@@ -202,7 +202,7 @@
             this.tbModelDetay.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.tbModelDetay.Name = "tbModelDetay";
             this.tbModelDetay.Size = new System.Drawing.Size(247, 34);
-            this.tbModelDetay.TabIndex = 8;
+            this.tbModelDetay.TabIndex = 10;
             // 
             // tbSikayet
             // 
@@ -211,7 +211,7 @@
             this.tbSikayet.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.tbSikayet.Name = "tbSikayet";
             this.tbSikayet.Size = new System.Drawing.Size(247, 34);
-            this.tbSikayet.TabIndex = 9;
+            this.tbSikayet.TabIndex = 11;
             // 
             // cmbFirmaAdi
             // 
@@ -221,7 +221,7 @@
             this.cmbFirmaAdi.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.cmbFirmaAdi.Name = "cmbFirmaAdi";
             this.cmbFirmaAdi.Size = new System.Drawing.Size(247, 37);
-            this.cmbFirmaAdi.TabIndex = 6;
+            this.cmbFirmaAdi.TabIndex = 8;
             // 
             // cmbModel
             // 
@@ -232,7 +232,7 @@
             this.cmbModel.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.cmbModel.Name = "cmbModel";
             this.cmbModel.Size = new System.Drawing.Size(247, 37);
-            this.cmbModel.TabIndex = 7;
+            this.cmbModel.TabIndex = 9;
             // 
             // tbKargo
             // 
@@ -243,7 +243,7 @@
             this.tbKargo.Properties.Mask.EditMask = "f";
             this.tbKargo.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.tbKargo.Size = new System.Drawing.Size(275, 34);
-            this.tbKargo.TabIndex = 19;
+            this.tbKargo.TabIndex = 20;
             // 
             // tbTelefon
             // 
@@ -254,7 +254,7 @@
             this.tbTelefon.Properties.Mask.EditMask = "(\\d?\\d?\\d?)\\d\\d\\d-\\d\\d\\d\\d";
             this.tbTelefon.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Regular;
             this.tbTelefon.Size = new System.Drawing.Size(275, 34);
-            this.tbTelefon.TabIndex = 17;
+            this.tbTelefon.TabIndex = 18;
             // 
             // simpleButton13
             // 
@@ -329,7 +329,7 @@
             this.tbMail.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.tbMail.Name = "tbMail";
             this.tbMail.Size = new System.Drawing.Size(275, 34);
-            this.tbMail.TabIndex = 18;
+            this.tbMail.TabIndex = 19;
             // 
             // tbFormNo
             // 
@@ -338,7 +338,7 @@
             this.tbFormNo.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.tbFormNo.Name = "tbFormNo";
             this.tbFormNo.Size = new System.Drawing.Size(275, 34);
-            this.tbFormNo.TabIndex = 16;
+            this.tbFormNo.TabIndex = 17;
             // 
             // tbImalKod
             // 
@@ -347,7 +347,7 @@
             this.tbImalKod.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.tbImalKod.Name = "tbImalKod";
             this.tbImalKod.Size = new System.Drawing.Size(275, 34);
-            this.tbImalKod.TabIndex = 15;
+            this.tbImalKod.TabIndex = 16;
             // 
             // tbSeriNo
             // 
@@ -356,7 +356,7 @@
             this.tbSeriNo.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.tbSeriNo.Name = "tbSeriNo";
             this.tbSeriNo.Size = new System.Drawing.Size(275, 34);
-            this.tbSeriNo.TabIndex = 14;
+            this.tbSeriNo.TabIndex = 15;
             // 
             // simpleButton14
             // 
@@ -436,7 +436,7 @@
             this.btnGuncelle.Location = new System.Drawing.Point(181, 587);
             this.btnGuncelle.Name = "btnGuncelle";
             this.btnGuncelle.Size = new System.Drawing.Size(165, 35);
-            this.btnGuncelle.TabIndex = 4;
+            this.btnGuncelle.TabIndex = 6;
             this.btnGuncelle.Text = "GÜNCELLE";
             this.btnGuncelle.Click += new System.EventHandler(this.btnGuncelle_Click);
             // 
@@ -473,7 +473,7 @@
             this.btnTemizle.Location = new System.Drawing.Point(737, 586);
             this.btnTemizle.Name = "btnTemizle";
             this.btnTemizle.Size = new System.Drawing.Size(165, 35);
-            this.btnTemizle.TabIndex = 5;
+            this.btnTemizle.TabIndex = 7;
             this.btnTemizle.Text = "TEMİZLE";
             this.btnTemizle.Click += new System.EventHandler(this.btnTemizle_Click);
             // 
@@ -571,7 +571,7 @@
             this.tbCikisTarihi.Properties.CalendarTimeProperties.CloseUpKey = new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.F4);
             this.tbCikisTarihi.Properties.CalendarTimeProperties.PopupBorderStyle = DevExpress.XtraEditors.Controls.PopupBorderStyles.Default;
             this.tbCikisTarihi.Size = new System.Drawing.Size(247, 34);
-            this.tbCikisTarihi.TabIndex = 105;
+            this.tbCikisTarihi.TabIndex = 5;
             this.tbCikisTarihi.TextChanged += new System.EventHandler(this.tbCikisTarihi_TextChanged);
             // 
             // contextMenuStrip1
@@ -587,7 +587,7 @@
             this.tbSure.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.tbSure.Properties.Appearance.Options.UseFont = true;
             this.tbSure.Size = new System.Drawing.Size(247, 34);
-            this.tbSure.TabIndex = 106;
+            this.tbSure.TabIndex = 4;
             // 
             // simpleButton15
             // 

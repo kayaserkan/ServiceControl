@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
-  <asmv1:assemblyIdentity name="ServisTakip.exe" version="1.0.1.10" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
+  <asmv1:assemblyIdentity name="ServisTakip.exe" version="1.0.1.11" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
   <description asmv2:iconFile="ServisIcon.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
   <application />
   <entryPoint>
@@ -919,14 +919,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ServisTakip.exe" size="447424">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ServisTakip.exe" size="454080">
       <assemblyIdentity name="ServisTakip" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>YOW6Y/Vm/gk4NuXzWiKiH3zrhtJ9aRIveaG32OiqIBc=</dsig:DigestValue>
+        <dsig:DigestValue>vMhDPxiclqpH+ce4YQyOgirbJ32Sx09YafKuBvEc9O0=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -951,13 +951,13 @@
       <dsig:DigestValue>gRg1LyDjySrnMo0ig7Hwa1C1y2lh2Ygw5Z9519pe0Fw=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="ServisTakip.exe.config" size="4868">
+  <file name="ServisTakip.exe.config" size="4982">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>Ujor7q1v1TDa2TNvvN75BudRQRwyX8y5z0jp47yWcwo=</dsig:DigestValue>
+      <dsig:DigestValue>ufOpjs76qIsddXoOYNQ5TI/iiXZh4Vn9kVgjazhBXoE=</dsig:DigestValue>
     </hash>
   </file>
 </asmv1:assembly>

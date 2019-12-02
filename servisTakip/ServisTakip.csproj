@@ -27,7 +27,7 @@
     <PublisherName>Serkan KAYA</PublisherName>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>10</ApplicationRevision>
+    <ApplicationRevision>11</ApplicationRevision>
     <ApplicationVersion>1.0.1.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -184,6 +184,12 @@
     <Compile Include="RaporlarForm.Designer.cs">
       <DependentUpon>RaporlarForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="SebepForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SebepForm.Designer.cs">
+      <DependentUpon>SebepForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ServislerForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -237,6 +243,9 @@
     </Compile>
     <EmbeddedResource Include="RaporlarForm.resx">
       <DependentUpon>RaporlarForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SebepForm.resx">
+      <DependentUpon>SebepForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ServislerForm.resx">
       <DependentUpon>ServislerForm.cs</DependentUpon>
