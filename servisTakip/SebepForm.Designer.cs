@@ -30,12 +30,12 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SebepForm));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.rbUretim = new System.Windows.Forms.RadioButton();
-            this.rbTeknikServis = new System.Windows.Forms.RadioButton();
-            this.rbMalzeme = new System.Windows.Forms.RadioButton();
-            this.rbAmbalaj = new System.Windows.Forms.RadioButton();
-            this.rbKullanici = new System.Windows.Forms.RadioButton();
             this.rbDiger = new System.Windows.Forms.RadioButton();
+            this.rbKullanici = new System.Windows.Forms.RadioButton();
+            this.rbAmbalaj = new System.Windows.Forms.RadioButton();
+            this.rbMalzeme = new System.Windows.Forms.RadioButton();
+            this.rbTeknikServis = new System.Windows.Forms.RadioButton();
+            this.rbUretim = new System.Windows.Forms.RadioButton();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
@@ -59,56 +59,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "ARIZA SEBEBİNİ SEÇİNİZ";
             // 
-            // rbUretim
-            // 
-            this.rbUretim.AutoSize = true;
-            this.rbUretim.Location = new System.Drawing.Point(17, 60);
-            this.rbUretim.Name = "rbUretim";
-            this.rbUretim.Size = new System.Drawing.Size(81, 21);
-            this.rbUretim.TabIndex = 2;
-            this.rbUretim.Text = "ÜRETİM";
-            this.rbUretim.UseVisualStyleBackColor = true;
-            // 
-            // rbTeknikServis
-            // 
-            this.rbTeknikServis.AutoSize = true;
-            this.rbTeknikServis.Location = new System.Drawing.Point(215, 60);
-            this.rbTeknikServis.Name = "rbTeknikServis";
-            this.rbTeknikServis.Size = new System.Drawing.Size(131, 21);
-            this.rbTeknikServis.TabIndex = 3;
-            this.rbTeknikServis.Text = "TEKNİK SERVİS";
-            this.rbTeknikServis.UseVisualStyleBackColor = true;
-            // 
-            // rbMalzeme
-            // 
-            this.rbMalzeme.AutoSize = true;
-            this.rbMalzeme.Location = new System.Drawing.Point(396, 60);
-            this.rbMalzeme.Name = "rbMalzeme";
-            this.rbMalzeme.Size = new System.Drawing.Size(95, 21);
-            this.rbMalzeme.TabIndex = 4;
-            this.rbMalzeme.Text = "MALZEME";
-            this.rbMalzeme.UseVisualStyleBackColor = true;
-            // 
-            // rbAmbalaj
-            // 
-            this.rbAmbalaj.AutoSize = true;
-            this.rbAmbalaj.Location = new System.Drawing.Point(17, 127);
-            this.rbAmbalaj.Name = "rbAmbalaj";
-            this.rbAmbalaj.Size = new System.Drawing.Size(91, 21);
-            this.rbAmbalaj.TabIndex = 5;
-            this.rbAmbalaj.Text = "AMBALAJ";
-            this.rbAmbalaj.UseVisualStyleBackColor = true;
-            // 
-            // rbKullanici
-            // 
-            this.rbKullanici.AutoSize = true;
-            this.rbKullanici.Location = new System.Drawing.Point(215, 127);
-            this.rbKullanici.Name = "rbKullanici";
-            this.rbKullanici.Size = new System.Drawing.Size(98, 21);
-            this.rbKullanici.TabIndex = 6;
-            this.rbKullanici.Text = "KULLANICI";
-            this.rbKullanici.UseVisualStyleBackColor = true;
-            // 
             // rbDiger
             // 
             this.rbDiger.AutoSize = true;
@@ -121,6 +71,56 @@
             this.rbDiger.Text = "DİĞER";
             this.rbDiger.UseVisualStyleBackColor = true;
             // 
+            // rbKullanici
+            // 
+            this.rbKullanici.AutoSize = true;
+            this.rbKullanici.Location = new System.Drawing.Point(215, 127);
+            this.rbKullanici.Name = "rbKullanici";
+            this.rbKullanici.Size = new System.Drawing.Size(98, 21);
+            this.rbKullanici.TabIndex = 6;
+            this.rbKullanici.Text = "KULLANICI";
+            this.rbKullanici.UseVisualStyleBackColor = true;
+            // 
+            // rbAmbalaj
+            // 
+            this.rbAmbalaj.AutoSize = true;
+            this.rbAmbalaj.Location = new System.Drawing.Point(17, 127);
+            this.rbAmbalaj.Name = "rbAmbalaj";
+            this.rbAmbalaj.Size = new System.Drawing.Size(91, 21);
+            this.rbAmbalaj.TabIndex = 5;
+            this.rbAmbalaj.Text = "AMBALAJ";
+            this.rbAmbalaj.UseVisualStyleBackColor = true;
+            // 
+            // rbMalzeme
+            // 
+            this.rbMalzeme.AutoSize = true;
+            this.rbMalzeme.Location = new System.Drawing.Point(396, 60);
+            this.rbMalzeme.Name = "rbMalzeme";
+            this.rbMalzeme.Size = new System.Drawing.Size(95, 21);
+            this.rbMalzeme.TabIndex = 4;
+            this.rbMalzeme.Text = "MALZEME";
+            this.rbMalzeme.UseVisualStyleBackColor = true;
+            // 
+            // rbTeknikServis
+            // 
+            this.rbTeknikServis.AutoSize = true;
+            this.rbTeknikServis.Location = new System.Drawing.Point(215, 60);
+            this.rbTeknikServis.Name = "rbTeknikServis";
+            this.rbTeknikServis.Size = new System.Drawing.Size(131, 21);
+            this.rbTeknikServis.TabIndex = 3;
+            this.rbTeknikServis.Text = "TEKNİK SERVİS";
+            this.rbTeknikServis.UseVisualStyleBackColor = true;
+            // 
+            // rbUretim
+            // 
+            this.rbUretim.AutoSize = true;
+            this.rbUretim.Location = new System.Drawing.Point(17, 60);
+            this.rbUretim.Name = "rbUretim";
+            this.rbUretim.Size = new System.Drawing.Size(81, 21);
+            this.rbUretim.TabIndex = 2;
+            this.rbUretim.Text = "ÜRETİM";
+            this.rbUretim.UseVisualStyleBackColor = true;
+            // 
             // btnCancel
             // 
             this.btnCancel.Image = ((System.Drawing.Image)(resources.GetObject("btnCancel.Image")));
@@ -131,6 +131,7 @@
             this.btnCancel.TabIndex = 1;
             this.btnCancel.Text = "VAZGEÇ";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnSave
             // 

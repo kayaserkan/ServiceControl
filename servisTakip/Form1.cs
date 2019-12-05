@@ -28,6 +28,7 @@ namespace ServisTakip
         KullaniciGirisForm kgf;
         CikisYapilacak cy;
         MalzemeForm mrf;
+        GrafikForm gf;
 
         public string kullaniciYetki;
 
@@ -136,6 +137,16 @@ namespace ServisTakip
                 mrf = new MalzemeForm();
                 mrf.MdiParent = this;
                 mrf.Show();
+            }
+        }
+
+        private void barButtonItem3_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (gf == null || gf.IsDisposed)
+            {
+                gf = new GrafikForm();
+                gf.MdiParent = this;
+                gf.Show();
             }
         }        
     }
