@@ -223,6 +223,7 @@
             this.simpleButton7.Size = new System.Drawing.Size(194, 34);
             this.simpleButton7.TabIndex = 54;
             this.simpleButton7.Text = "TARİH";
+            this.simpleButton7.Click += new System.EventHandler(this.simpleButton7_Click);
             // 
             // simpleButton8
             // 

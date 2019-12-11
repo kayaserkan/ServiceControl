@@ -31,7 +31,7 @@ namespace ServisTakip
         bool imalKoduGoster;
 
         double ucretsay;
-        int cihazsayac, garantiIciSayac, garantiDisiSayac;
+        int cihazsayac, garantiIciSayac, garantiDisiSayac, uretimSay, servisSay, malzemeSay, kullaniciSay, ambalajSay, digerSay;
         int garantisayac;
 
         public RaporlarForm()
@@ -75,16 +75,17 @@ namespace ServisTakip
             {
                 ucretsay = 0;
                 string dtrstr;
+                lblAmbalaj.Text = ""; lblDiger.Text = ""; lblKullanici.Text = ""; lblMalzeme.Text = ""; lblServis.Text = ""; lblUretim.Text = "";
 
                 dbc.Baglanti();
 
                 if (rbGirisTarihi.Checked == true)
                 {
-                    dtrstr = string.Format("SELECT * FROM kayittablo where FirmaAdi LIKE '%" + cmbFirmaAdi.Text + "%' AND  Model LIKE '%" + cbModelSec.Text + "%' AND GelisTarih BETWEEN '{0}' AND '{1}'", firstDate, lastDate);
+                    dtrstr = string.Format("SELECT * FROM kayittablo where FirmaAdi LIKE '%" + cmbFirmaAdi.Text + "%' AND  Model LIKE '%" + cbModelSec.Text + "' AND GelisTarih BETWEEN '{0}' AND '{1}'", firstDate, lastDate);
                 }
                 else
                 {
-                    dtrstr = string.Format("SELECT * FROM kayittablo where FirmaAdi LIKE '%" + cmbFirmaAdi.Text + "%' AND  Model LIKE '%" + cbModelSec.Text + "%' AND CikisTarih BETWEEN '{0}' AND '{1}'", firstDate, lastDate);
+                    dtrstr = string.Format("SELECT * FROM kayittablo where FirmaAdi LIKE '%" + cmbFirmaAdi.Text + "%' AND  Model LIKE '%" + cbModelSec.Text + "' AND CikisTarih BETWEEN '{0}' AND '{1}'", firstDate, lastDate);
                 }
 
                 DtRaporlama.Clear();
@@ -125,7 +126,35 @@ namespace ServisTakip
                     {
                         garantiDisiSayac++;
                     }
-                }
+
+                    switch (DtRaporlama.Rows[i][20].ToString())
+                    {
+                        case "KULLANICI":
+                            kullaniciSay++;
+                            break;
+
+                        case "ÜRETIM":
+                            uretimSay++;
+                            break;
+
+                        case "TEKNIK SERVIS":
+                            servisSay++;
+                            break;
+
+                        case "AMBALAJ":
+                            ambalajSay++;
+                            break;
+
+                        case "MALZEME":
+                            malzemeSay++;
+                            break;
+
+                        case "DIGER":
+                            digerSay++;
+                            break;
+                    }
+                }                
+                
                 gridView1.BestFitColumns(); // kolonları en uygun genişliğe ayarlıyor
                 gridView1.OptionsView.ShowAutoFilterRow = true; // gridView de ilk satırda arama sütünu açıyor
 
@@ -155,54 +184,25 @@ namespace ServisTakip
                 lblGarantiDisi.Visible = true;
                 garantiDisiSayac = garantiIciSayac = 0;
 
-
-                MySqlCommand kullaniciCommand = new MySqlCommand("select count(*) as Kullanici from densi.kayittablo where hata ='KULLANICI' and gelistarih between '" + firstDate + "' and '" + lastDate + "';", dbc.Baglanti());
-                MySqlDataReader kullaniciReader = kullaniciCommand.ExecuteReader();
-                while (kullaniciReader.Read())
-                {
-                    lblKullanici.Text = "KULLANICI= " + kullaniciReader["Kullanici"].ToString();
-                }
+                lblKullanici.Text = "KULLANICI= " + kullaniciSay.ToString();
                 lblKullanici.Visible = true;
 
-                MySqlCommand uretimCommand = new MySqlCommand("select count(*) as Uretim from densi.kayittablo where hata ='ÜRETIM' and gelistarih between '" + firstDate + "' and '" + lastDate + "';", dbc.Baglanti());
-                MySqlDataReader uretimReader = uretimCommand.ExecuteReader();
-                while (uretimReader.Read())
-                {
-                    lblUretim.Text = "ÜRETİM= " + uretimReader["Uretim"].ToString();
-                }
+                lblUretim.Text = "ÜRETİM= " + uretimSay.ToString();
                 lblUretim.Visible = true;
 
-                MySqlCommand servisCommand = new MySqlCommand("select count(*) as Servis from densi.kayittablo where hata ='TEKNIK SERVIS' and gelistarih between '" + firstDate + "' and '" + lastDate + "';", dbc.Baglanti());
-                MySqlDataReader servisReader = servisCommand.ExecuteReader();
-                while (servisReader.Read())
-                {
-                    lblServis.Text = "SERVİS= " + servisReader["Servis"].ToString();
-                }
+                lblServis.Text = "SERVİS= " + servisSay.ToString();
                 lblServis.Visible = true;
 
-                MySqlCommand malzemeCommand = new MySqlCommand("select count(*) as Malzeme from densi.kayittablo where hata ='MALZEME' and gelistarih between '" + firstDate + "' and '" + lastDate + "';", dbc.Baglanti());
-                MySqlDataReader malzemeReader = malzemeCommand.ExecuteReader();
-                while (malzemeReader.Read())
-                {
-                    lblMalzeme.Text = "MALZEME= " + malzemeReader["malzeme"].ToString();
-                }
+                lblDiger.Text = "DİĞER= " + digerSay.ToString();
+                lblDiger.Visible = true;
+
+                lblMalzeme.Text = "MALZEME= " + malzemeSay.ToString();
                 lblMalzeme.Visible = true;
 
-                MySqlCommand ambalajCommand = new MySqlCommand("select count(*) as Ambalaj from densi.kayittablo where hata ='AMBALAJ' and gelistarih between '" + firstDate + "' and '" + lastDate + "';", dbc.Baglanti());
-                MySqlDataReader ambalajReader = ambalajCommand.ExecuteReader();
-                while (ambalajReader.Read())
-                {
-                    lblAmbalaj.Text = "AMBALAJ= " + ambalajReader["Ambalaj"].ToString();
-                }
+                lblAmbalaj.Text = "AMBALAJ= " + ambalajSay.ToString();
                 lblAmbalaj.Visible = true;
 
-                MySqlCommand digerCommand = new MySqlCommand("select count(*) as Diger from densi.kayittablo where hata ='DİGER' and gelistarih between '" + firstDate + "' and '" + lastDate + "';", dbc.Baglanti());
-                MySqlDataReader digerReader = digerCommand.ExecuteReader();
-                while (digerReader.Read())
-                {
-                    lblDiger.Text = "DİĞER= " + digerReader["Diger"].ToString();
-                }
-                lblDiger.Visible = true;
+                kullaniciSay = uretimSay = servisSay = digerSay = malzemeSay = ambalajSay = 0;
 
                 dbc.Baglanti().Close();
 
@@ -210,6 +210,11 @@ namespace ServisTakip
             catch(Exception ex)
             {
                 MessageBox.Show(ex.Message);
+                dbc.Baglanti().Close();
+            }
+            finally
+            {
+                dbc.Baglanti().Close();
             }
         }
         #endregion

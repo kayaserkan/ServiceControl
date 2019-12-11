@@ -40,5 +40,34 @@ namespace ServisTakip
         {
             this.Close();
         }
+
+        private void SebepForm_Load(object sender, EventArgs e)
+        {
+            if(Properties.Settings.Default.ArizaSebebi == "DİĞER")
+            {
+                rbDiger.Checked = true;
+            }
+               
+            else if(Properties.Settings.Default.ArizaSebebi == "ÜRETİM")
+            {
+                rbUretim.Checked = true;
+            }
+            else if (Properties.Settings.Default.ArizaSebebi == "MALZEME")
+            {
+                rbMalzeme.Checked = true;
+            }
+            else if (Properties.Settings.Default.ArizaSebebi == "TEKNİK SERVİS")
+            {
+                rbTeknikServis.Checked = true;
+            }
+            else if (Properties.Settings.Default.ArizaSebebi == "KULLANICI")
+            {
+                rbKullanici.Checked = true;
+            }
+            else if (Properties.Settings.Default.ArizaSebebi == "AMBALAJ")
+            {
+                rbAmbalaj.Checked = true;
+            }
+        }
     }
 }

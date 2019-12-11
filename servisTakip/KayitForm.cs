@@ -45,6 +45,69 @@ namespace ServisTakip
                     Command.ExecuteNonQuery();
                     MessageBox.Show("Kayıt Eklendi!!!");
                     dbc.Baglanti().Close();
+
+
+                    if(DateTime.Now.Month == 1)
+                    {
+                        MySqlCommand ArizaEkleCommand = new MySqlCommand("UPDATE arizarapor SET " + cmbModel.Text + " =" + cmbModel.Text + " + 1 WHERE YIL = " + DateTime.Today.Year.ToString() + " and AY = 'OCAK'", dbc.Baglanti());
+                        ArizaEkleCommand.ExecuteNonQuery();
+                    }
+                    else if(DateTime.Now.Month == 2)
+                    {
+                        MySqlCommand ArizaEkleCommand = new MySqlCommand("UPDATE arizarapor SET " + cmbModel.Text + " =" + cmbModel.Text + " + 1 WHERE YIL = " + DateTime.Today.Year.ToString() + " and AY = 'SUBAT'", dbc.Baglanti());
+                        ArizaEkleCommand.ExecuteNonQuery();
+                    }
+                    else if (DateTime.Now.Month == 3)
+                    {
+                        MySqlCommand ArizaEkleCommand = new MySqlCommand("UPDATE arizarapor SET " + cmbModel.Text + " =" + cmbModel.Text + " + 1 WHERE YIL = " + DateTime.Today.Year.ToString() + " and AY = 'MART'", dbc.Baglanti());
+                        ArizaEkleCommand.ExecuteNonQuery();
+                    }
+                    else if (DateTime.Now.Month == 4)
+                    {
+                        MySqlCommand ArizaEkleCommand = new MySqlCommand("UPDATE arizarapor SET " + cmbModel.Text + " =" + cmbModel.Text + " + 1 WHERE YIL = " + DateTime.Today.Year.ToString() + " and AY = 'NISAN'", dbc.Baglanti());
+                        ArizaEkleCommand.ExecuteNonQuery();
+                    }
+                    else if (DateTime.Now.Month == 5)
+                    {
+                        MySqlCommand ArizaEkleCommand = new MySqlCommand("UPDATE arizarapor SET " + cmbModel.Text + " =" + cmbModel.Text + " + 1 WHERE YIL = " + DateTime.Today.Year.ToString() + " and AY = 'MAYIS'", dbc.Baglanti());
+                        ArizaEkleCommand.ExecuteNonQuery();
+                    }
+                    else if (DateTime.Now.Month == 6)
+                    {
+                        MySqlCommand ArizaEkleCommand = new MySqlCommand("UPDATE arizarapor SET " + cmbModel.Text + " =" + cmbModel.Text + " + 1 WHERE YIL = " + DateTime.Today.Year.ToString() + " and AY = 'HAZIRAN'", dbc.Baglanti());
+                        ArizaEkleCommand.ExecuteNonQuery();
+                    }
+                    else if (DateTime.Now.Month == 7)
+                    {
+                        MySqlCommand ArizaEkleCommand = new MySqlCommand("UPDATE arizarapor SET " + cmbModel.Text + " =" + cmbModel.Text + " + 1 WHERE YIL = " + DateTime.Today.Year.ToString() + " and AY = 'TEMMUZ'", dbc.Baglanti());
+                        ArizaEkleCommand.ExecuteNonQuery();
+                    }
+                    else if (DateTime.Now.Month == 8)
+                    {
+                        MySqlCommand ArizaEkleCommand = new MySqlCommand("UPDATE arizarapor SET " + cmbModel.Text + " =" + cmbModel.Text + " + 1 WHERE YIL = " + DateTime.Today.Year.ToString() + " and AY = 'AGUSTOS'", dbc.Baglanti());
+                        ArizaEkleCommand.ExecuteNonQuery();
+                    }
+                    else if (DateTime.Now.Month == 9)
+                    {
+                        MySqlCommand ArizaEkleCommand = new MySqlCommand("UPDATE arizarapor SET " + cmbModel.Text + " =" + cmbModel.Text + " + 1 WHERE YIL = " + DateTime.Today.Year.ToString() + " and AY = 'EYLUL'", dbc.Baglanti());
+                        ArizaEkleCommand.ExecuteNonQuery();
+                    }
+                    else if (DateTime.Now.Month == 10)
+                    {
+                        MySqlCommand ArizaEkleCommand = new MySqlCommand("UPDATE arizarapor SET " + cmbModel.Text + " =" + cmbModel.Text + " + 1 WHERE YIL = " + DateTime.Today.Year.ToString() + " and AY = 'EKIM'", dbc.Baglanti());
+                        ArizaEkleCommand.ExecuteNonQuery();
+                    }
+                    else if (DateTime.Now.Month == 11)
+                    {
+                        MySqlCommand ArizaEkleCommand = new MySqlCommand("UPDATE arizarapor SET " + cmbModel.Text + " =" + cmbModel.Text + " + 1 WHERE YIL = " + DateTime.Today.Year.ToString() + " and AY = 'KASIM'", dbc.Baglanti());
+                        ArizaEkleCommand.ExecuteNonQuery();
+                    }
+                    else if (DateTime.Now.Month == 12)
+                    {
+                        MySqlCommand ArizaEkleCommand = new MySqlCommand("UPDATE arizarapor SET " + cmbModel.Text + " =" + cmbModel.Text + " + 1 WHERE YIL = " + DateTime.Today.Year.ToString() + " and AY = 'ARALIK'", dbc.Baglanti());
+                        ArizaEkleCommand.ExecuteNonQuery();
+                    }
+                    dbc.Baglanti().Close();
                 }
 
                 catch (Exception ex)
@@ -125,5 +188,10 @@ namespace ServisTakip
             return base.ProcessCmdKey(ref msg, keyData);
         }
         #endregion
+
+        private void simpleButton7_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(DateTime.Today.Year.ToString() + " and AY = " + DateTime.Now.Month.ToString());
+        }
     }
 }

@@ -184,11 +184,12 @@
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.chartBarController1 = new DevExpress.XtraCharts.UI.ChartBarController();
-            this.cbModelSec = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.tbYilSec = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.btnGoster = new System.Windows.Forms.Button();
+            this.btnTemizle = new DevExpress.XtraEditors.SimpleButton();
+            this.btnGoster = new DevExpress.XtraEditors.SimpleButton();
+            this.cbModelSec = new DevExpress.XtraEditors.ComboBoxEdit();
             ((System.ComponentModel.ISupportInitialize)(this.chartCont)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(xyDiagram1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(series1)).BeginInit();
@@ -206,6 +207,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.galleryDropDown7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.galleryDropDown8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartBarController1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbModelSec.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // chartCont
@@ -804,14 +806,6 @@
             this.chartBarController1.BarItems.Add(this.exportToTIFFChartItem1);
             this.chartBarController1.Control = this.chartCont;
             // 
-            // cbModelSec
-            // 
-            this.cbModelSec.FormattingEnabled = true;
-            this.cbModelSec.Location = new System.Drawing.Point(12, 118);
-            this.cbModelSec.Name = "cbModelSec";
-            this.cbModelSec.Size = new System.Drawing.Size(192, 24);
-            this.cbModelSec.TabIndex = 5;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -837,28 +831,49 @@
             this.label2.TabIndex = 8;
             this.label2.Text = "GRAFİK YILI";
             // 
+            // btnTemizle
+            // 
+            this.btnTemizle.Image = ((System.Drawing.Image)(resources.GetObject("btnTemizle.Image")));
+            this.btnTemizle.Location = new System.Drawing.Point(12, 264);
+            this.btnTemizle.Name = "btnTemizle";
+            this.btnTemizle.Size = new System.Drawing.Size(192, 44);
+            this.btnTemizle.TabIndex = 14;
+            this.btnTemizle.Text = "GRAFİK TEMİZLE";
+            this.btnTemizle.Click += new System.EventHandler(this.btnTemizle_Click);
+            // 
             // btnGoster
             // 
             this.btnGoster.Image = ((System.Drawing.Image)(resources.GetObject("btnGoster.Image")));
-            this.btnGoster.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnGoster.Location = new System.Drawing.Point(12, 219);
+            this.btnGoster.Location = new System.Drawing.Point(12, 214);
             this.btnGoster.Name = "btnGoster";
-            this.btnGoster.Size = new System.Drawing.Size(192, 39);
-            this.btnGoster.TabIndex = 9;
-            this.btnGoster.Text = "GÖSTER";
-            this.btnGoster.UseVisualStyleBackColor = true;
+            this.btnGoster.Size = new System.Drawing.Size(192, 44);
+            this.btnGoster.TabIndex = 14;
+            this.btnGoster.Text = "GRAFİK GÖSTER";
             this.btnGoster.Click += new System.EventHandler(this.btnGoster_Click);
+            // 
+            // cbModelSec
+            // 
+            this.cbModelSec.Location = new System.Drawing.Point(15, 118);
+            this.cbModelSec.MenuManager = this.barManager1;
+            this.cbModelSec.Name = "cbModelSec";
+            this.cbModelSec.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.cbModelSec.Properties.Appearance.Options.UseFont = true;
+            this.cbModelSec.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cbModelSec.Size = new System.Drawing.Size(189, 28);
+            this.cbModelSec.TabIndex = 15;
             // 
             // GrafikForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1056, 529);
+            this.Controls.Add(this.cbModelSec);
             this.Controls.Add(this.btnGoster);
+            this.Controls.Add(this.btnTemizle);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.tbYilSec);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.cbModelSec);
             this.Controls.Add(this.chartCont);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
@@ -884,6 +899,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.galleryDropDown7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.galleryDropDown8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartBarController1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbModelSec.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -940,7 +956,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox tbYilSec;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox cbModelSec;
-        private System.Windows.Forms.Button btnGoster;
+        private DevExpress.XtraEditors.SimpleButton btnTemizle;
+        private DevExpress.XtraEditors.SimpleButton btnGoster;
+        private DevExpress.XtraEditors.ComboBoxEdit cbModelSec;
     }
 }

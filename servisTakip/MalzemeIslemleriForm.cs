@@ -33,6 +33,8 @@ namespace ServisTakip
             {
                 MySqlCommand ModelEkle = new MySqlCommand("create table if not exists " + tbModelEkle.Text.ToLower() + " like pc100;", dbc.Baglanti());
                 ModelEkle.ExecuteNonQuery();
+                MySqlCommand MysqlArizaTabloModelEkle = new MySqlCommand("ALTER TABLE `densi`.`arizarapor` ADD  `" + tbModelEkle.Text.ToLower() + "` INT null", dbc.Baglanti());
+                MysqlArizaTabloModelEkle.ExecuteNonQuery();
             }
         }
 

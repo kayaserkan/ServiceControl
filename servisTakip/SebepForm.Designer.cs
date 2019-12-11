@@ -155,6 +155,7 @@
             this.Name = "SebepForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ARIZA SEBEBİ SEÇİMİ";
+            this.Load += new System.EventHandler(this.SebepForm_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
