@@ -40,24 +40,38 @@ namespace ServisTakip
 
         private void MalzemeIslemleriForm_Load(object sender, EventArgs e)
         {
-            MySqlCommand modelDoldurCommand = new MySqlCommand("SELECT *FROM modeltablo", dbc.Baglanti());
-            MySqlDataReader dr = modelDoldurCommand.ExecuteReader();
-
-            while(dr.Read())
+            try
             {
-                cbModelSec.Properties.Items.Add(dr["model"]);
+                MySqlCommand modelDoldurCommand = new MySqlCommand("SELECT *FROM modeltablo", dbc.Baglanti());
+                MySqlDataReader dr = modelDoldurCommand.ExecuteReader();
+
+                while (dr.Read())
+                {
+                    cbModelSec.Properties.Items.Add(dr["model"]);
+                }
+                dbc.Baglanti().Close();
+                cbModelSec.Properties.Sorted = true;
             }
-            dbc.Baglanti().Close();
-            cbModelSec.Properties.Sorted = true;
+            catch(Exception ec)
+            {
+                MessageBox.Show(ec.Message);
+            }
         }
 
         private void cbModelSec_SelectedIndexChanged(object sender, EventArgs e)
         {
-            dt = new DataTable();
-            MySqlDataAdapter da = new MySqlDataAdapter("SELECT *FROM " + cbModelSec.Text.ToLower(), dbc.Baglanti());
-            da.Fill(dt);
-            gridControl1.DataSource = dt;
-            dbc.Baglanti().Close();
+            try
+            {
+                dt = new DataTable();
+                MySqlDataAdapter da = new MySqlDataAdapter("SELECT *FROM " + cbModelSec.Text.ToLower(), dbc.Baglanti());
+                da.Fill(dt);
+                gridControl1.DataSource = dt;
+                dbc.Baglanti().Close();
+            }
+            catch(Exception ec)
+            {
+
+            }
         }
 
         private void gridView1_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)

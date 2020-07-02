@@ -547,5 +547,10 @@ namespace ServisTakip
         }
         #endregion
 
+        private void gridView2_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
+        {
+
+        }
+
     }
 }

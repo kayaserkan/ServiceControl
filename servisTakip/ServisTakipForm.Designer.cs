@@ -543,10 +543,10 @@
             this.gcMalzeme.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.gcMalzeme.Location = new System.Drawing.Point(910, 100);
+            this.gcMalzeme.Location = new System.Drawing.Point(908, 63);
             this.gcMalzeme.MainView = this.gridView2;
             this.gcMalzeme.Name = "gcMalzeme";
-            this.gcMalzeme.Size = new System.Drawing.Size(299, 518);
+            this.gcMalzeme.Size = new System.Drawing.Size(299, 559);
             this.gcMalzeme.TabIndex = 104;
             this.gcMalzeme.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
@@ -556,6 +556,7 @@
             // 
             this.gridView2.GridControl = this.gcMalzeme;
             this.gridView2.Name = "gridView2";
+            this.gridView2.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gridView2_FocusedRowChanged);
             // 
             // tbCikisTarihi
             // 

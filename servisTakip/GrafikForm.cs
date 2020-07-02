@@ -46,7 +46,7 @@ namespace ServisTakip
                         Series series1 = new Series(cbModelSec.Text, ViewType.Bar);
                         chartCont.Series.Add(series1);
 
-                        MySqlCommand servisCommand = new MySqlCommand("SELECT  AY, " + cbModelSec.Text + " from densi.arizarapor where YIL = '" + tbYilSec.Text + "';", dbc.Baglanti());
+                        MySqlCommand servisCommand = new MySqlCommand("SELECT  AY, " + cbModelSec.Text + " from arizarapor where YIL = '" + tbYilSec.Text + "';", dbc.Baglanti());
                         MySqlDataReader servisReader = servisCommand.ExecuteReader();
                         while (servisReader.Read())
                         {

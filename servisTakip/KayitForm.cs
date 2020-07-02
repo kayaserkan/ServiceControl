@@ -46,7 +46,6 @@ namespace ServisTakip
                     MessageBox.Show("Kayıt Eklendi!!!");
                     dbc.Baglanti().Close();
 
-
                     if(DateTime.Now.Month == 1)
                     {
                         MySqlCommand ArizaEkleCommand = new MySqlCommand("UPDATE arizarapor SET " + cmbModel.Text + " =" + cmbModel.Text + " + 1 WHERE YIL = " + DateTime.Today.Year.ToString() + " and AY = 'OCAK'", dbc.Baglanti());
@@ -128,25 +127,32 @@ namespace ServisTakip
             tbGelisTarihi.Text = dt.Date.ToString("yyyy/MM/dd");
 
             cmbModel.Items.Clear();
-            MySqlCommand ModelSecCommand = new MySqlCommand("SELECT *FROM modeltablo", dbc.Baglanti());
-            MySqlDataReader ModelSecReader = ModelSecCommand.ExecuteReader();
-
-            while(ModelSecReader.Read())
+            try
             {
-                cmbModel.Items.Add(ModelSecReader["Model"]);
+                MySqlCommand ModelSecCommand = new MySqlCommand("SELECT *FROM modeltablo", dbc.Baglanti());
+                MySqlDataReader ModelSecReader = ModelSecCommand.ExecuteReader();
+
+                while (ModelSecReader.Read())
+                {
+                    cmbModel.Items.Add(ModelSecReader["Model"]);
+                }
+                dbc.Baglanti().Close();
+                cmbModel.Sorted = true;
+
+                MySqlCommand FirmaSecCommand = new MySqlCommand("SELECT *FROM firmakayittablo", dbc.Baglanti());
+                MySqlDataReader FirmaSecReader = FirmaSecCommand.ExecuteReader();
+
+                while (FirmaSecReader.Read())
+                {
+                    cmbFirmaAdi.Items.Add(FirmaSecReader["FirmaAdi"]);
+                }
+                dbc.Baglanti().Close();
+                cmbFirmaAdi.Sorted = true;
             }
-            dbc.Baglanti().Close();
-            cmbModel.Sorted = true;
-
-            MySqlCommand FirmaSecCommand = new MySqlCommand("SELECT *FROM firmakayittablo", dbc.Baglanti());
-            MySqlDataReader FirmaSecReader = FirmaSecCommand.ExecuteReader();
-
-            while(FirmaSecReader.Read())
+            catch(Exception ec)
             {
-                cmbFirmaAdi.Items.Add(FirmaSecReader["FirmaAdi"]);
+                MessageBox.Show(ec.Message);
             }
-            dbc.Baglanti().Close();
-            cmbFirmaAdi.Sorted = true;
         }
 
         private void cmbFirmaAdi_Click(object sender, EventArgs e)

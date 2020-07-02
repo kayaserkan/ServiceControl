@@ -65,6 +65,7 @@
             this.rbIskontoYirmi = new System.Windows.Forms.RadioButton();
             this.rbIskontoOtuz = new System.Windows.Forms.RadioButton();
             this.rbIskontoYok = new System.Windows.Forms.RadioButton();
+            this.rbiskontoBes = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMalzemeListesi)).BeginInit();
             this.SuspendLayout();
@@ -330,6 +331,7 @@
             this.dataGridViewMalzemeListesi.Name = "dataGridViewMalzemeListesi";
             this.dataGridViewMalzemeListesi.RowStyle += new DevExpress.XtraGrid.Views.Grid.RowStyleEventHandler(this.dataGridViewMalzemeListesi_RowStyle_1);
             this.dataGridViewMalzemeListesi.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.dataGridViewMalzemeListesi_FocusedRowChanged);
+            this.dataGridViewMalzemeListesi.DoubleClick += new System.EventHandler(this.dataGridViewMalzemeListesi_DoubleClick);
             // 
             // monthCalendar1
             // 
@@ -386,7 +388,7 @@
             // rbIskontoOn
             // 
             this.rbIskontoOn.AutoSize = true;
-            this.rbIskontoOn.Location = new System.Drawing.Point(701, 468);
+            this.rbIskontoOn.Location = new System.Drawing.Point(756, 468);
             this.rbIskontoOn.Name = "rbIskontoOn";
             this.rbIskontoOn.Size = new System.Drawing.Size(57, 21);
             this.rbIskontoOn.TabIndex = 29;
@@ -397,7 +399,7 @@
             // rbIskontoYirmi
             // 
             this.rbIskontoYirmi.AutoSize = true;
-            this.rbIskontoYirmi.Location = new System.Drawing.Point(764, 468);
+            this.rbIskontoYirmi.Location = new System.Drawing.Point(819, 468);
             this.rbIskontoYirmi.Name = "rbIskontoYirmi";
             this.rbIskontoYirmi.Size = new System.Drawing.Size(57, 21);
             this.rbIskontoYirmi.TabIndex = 30;
@@ -408,7 +410,7 @@
             // rbIskontoOtuz
             // 
             this.rbIskontoOtuz.AutoSize = true;
-            this.rbIskontoOtuz.Location = new System.Drawing.Point(827, 468);
+            this.rbIskontoOtuz.Location = new System.Drawing.Point(882, 468);
             this.rbIskontoOtuz.Name = "rbIskontoOtuz";
             this.rbIskontoOtuz.Size = new System.Drawing.Size(57, 21);
             this.rbIskontoOtuz.TabIndex = 31;
@@ -427,11 +429,24 @@
             this.rbIskontoYok.Text = "YOK";
             this.rbIskontoYok.UseVisualStyleBackColor = true;
             // 
+            // rbiskontoBes
+            // 
+            this.rbiskontoBes.AutoSize = true;
+            this.rbiskontoBes.Checked = true;
+            this.rbiskontoBes.Location = new System.Drawing.Point(701, 468);
+            this.rbiskontoBes.Name = "rbiskontoBes";
+            this.rbiskontoBes.Size = new System.Drawing.Size(49, 21);
+            this.rbiskontoBes.TabIndex = 33;
+            this.rbiskontoBes.TabStop = true;
+            this.rbiskontoBes.Text = "%5";
+            this.rbiskontoBes.UseVisualStyleBackColor = true;
+            // 
             // CikisYapilacak
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1212, 679);
+            this.Controls.Add(this.rbiskontoBes);
             this.Controls.Add(this.rbIskontoYok);
             this.Controls.Add(this.rbIskontoOtuz);
             this.Controls.Add(this.rbIskontoYirmi);
@@ -515,5 +530,6 @@
         private System.Windows.Forms.RadioButton rbIskontoYirmi;
         private System.Windows.Forms.RadioButton rbIskontoOtuz;
         private System.Windows.Forms.RadioButton rbIskontoYok;
+        private System.Windows.Forms.RadioButton rbiskontoBes;
     }
 }

@@ -68,6 +68,10 @@ namespace ServisTakip
                     {
                         Command.Parameters.AddWithValue("@P13", fiyattopla() - ((fiyattopla() / 100) * 30));
                     }
+                    else if (rbIskontoOtuz.Checked == true)
+                    {
+                        Command.Parameters.AddWithValue("@P13", fiyattopla() - ((fiyattopla() / 100) * 5));
+                    }
 
                     Command.Parameters.AddWithValue("@P14", tepDate);
                     
@@ -94,10 +98,12 @@ namespace ServisTakip
                     }
                     else if (rbIskontoOtuz.Checked == true)
                     {
-                        Command.Parameters.AddWithValue("@P16", 30);
-                            
+                        Command.Parameters.AddWithValue("@P16", 30);                            
                     }
-
+                    else if (rbiskontoBes.Checked == true)
+                    {
+                        Command.Parameters.AddWithValue("@P16", 5);
+                    }
                     Command.ExecuteNonQuery();
                     MessageBox.Show("Kayıt Eklendi!!!");
                     dbc.Baglanti().Close();
@@ -126,9 +132,10 @@ namespace ServisTakip
         {
              DateTime dt = DateTime.Today;
              trh = dt.Date.ToString("yyyy/MM/dd");
-             rbIskontoYirmi.Checked = true;
+             rbiskontoBes.Checked = true;
              DateChange();
         }
+
 
         public void MalzemeTablosuGuncelle()
         {
@@ -157,7 +164,8 @@ namespace ServisTakip
             dataGridViewMalzemeListesi.Columns[16].Caption = "KARGO";
 
 
-
+            dataGridViewMalzemeListesi.Columns[1].AppearanceCell.BackColor = Color.LightCyan;
+            dataGridViewMalzemeListesi.Columns[2].AppearanceCell.BackColor = Color.LightCyan;
             dataGridViewMalzemeListesi.Columns[3].AppearanceCell.BackColor = Color.LightCyan;
             dataGridViewMalzemeListesi.Columns[4].AppearanceCell.BackColor = Color.LightCyan;
             dataGridViewMalzemeListesi.Columns[5].AppearanceCell.BackColor = Color.LightCyan;
@@ -168,6 +176,11 @@ namespace ServisTakip
             dataGridViewMalzemeListesi.Columns[10].AppearanceCell.BackColor = Color.LightCyan;
             dataGridViewMalzemeListesi.Columns[11].AppearanceCell.BackColor = Color.LightCyan;
             dataGridViewMalzemeListesi.Columns[12].AppearanceCell.BackColor = Color.LightCyan;
+            dataGridViewMalzemeListesi.Columns[13].AppearanceCell.BackColor = Color.LightCyan;
+            dataGridViewMalzemeListesi.Columns[14].AppearanceCell.BackColor = Color.LightCyan;
+            dataGridViewMalzemeListesi.Columns[15].AppearanceCell.BackColor = Color.LightCyan;
+            dataGridViewMalzemeListesi.Columns[16].AppearanceCell.BackColor = Color.LightCyan;
+
 
             Temizle();
             
@@ -311,6 +324,11 @@ namespace ServisTakip
         private void btnYenile_Click(object sender, EventArgs e)
         {
             MalzemeTablosuGuncelle();
+        }
+
+        private void dataGridViewMalzemeListesi_DoubleClick(object sender, EventArgs e)
+        {
+            MessageBox.Show("");
         }
     }
 }
