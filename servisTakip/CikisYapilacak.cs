@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using MySql.Data;
 using MySql.Data.MySqlClient;
 using DevExpress.XtraGrid.Views.Grid;
+using DevExpress.XtraGrid.Views.Grid.ViewInfo;
+using DevExpress.XtraGrid;
 
 namespace ServisTakip
 {
@@ -68,7 +70,7 @@ namespace ServisTakip
                     {
                         Command.Parameters.AddWithValue("@P13", fiyattopla() - ((fiyattopla() / 100) * 30));
                     }
-                    else if (rbIskontoOtuz.Checked == true)
+                    else if (rbiskontoBes.Checked == true)
                     {
                         Command.Parameters.AddWithValue("@P13", fiyattopla() - ((fiyattopla() / 100) * 5));
                     }
@@ -135,8 +137,7 @@ namespace ServisTakip
              rbiskontoBes.Checked = true;
              DateChange();
         }
-
-
+        
         public void MalzemeTablosuGuncelle()
         {
             DataTable dt = new DataTable();
@@ -328,7 +329,15 @@ namespace ServisTakip
 
         private void dataGridViewMalzemeListesi_DoubleClick(object sender, EventArgs e)
         {
-            MessageBox.Show("");
+            GridView view = (GridView)sender;
+	        Point pt = view.GridControl.PointToClient(MousePosition);
+	        GridHitInfo info = view.CalcHitInfo(pt);
+	        if ((info.InRow || info.InRowCell))
+	        {
+		        Object cellValue = view.GetRowCellValue(info.RowHandle, info.Column);
+		        MessageBox.Show(string.Format("Made a doubleclick at rowhandle: {0}, columnhandle: {1}, value: {2}.", info.RowHandle, info.Column.ColumnHandle, cellValue));
+             
+	        }          
         }
     }
 }
